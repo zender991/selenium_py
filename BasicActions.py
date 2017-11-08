@@ -4,11 +4,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 import unittest
 
+import HtmlTestRunner
+
 
 class LoginTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome("C:\Libs\chromedriver.exe")
+        #self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.get("https://www.facebook.com/")
 
 
@@ -37,4 +40,4 @@ class LoginTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='example_dir'))
